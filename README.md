@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+<!-- <<<<<<< HEAD -->
 # Aoda
 
 A simple mobile banking application for withdrawing/Sending transactions over REST API
@@ -91,8 +91,7 @@ For open source projects, say how it is licensed.
 
 ## Project status
 If you have run out of energy or time for your project, put a note at the top of the README saying that development has slowed down or stopped completely. Someone may choose to fork your project or volunteer to step in as a maintainer or owner, allowing your project to keep going. You can also make an explicit request for maintainers.
-=======
-# aoda
+<!-- # aoda
 
 A new Flutter project.
 
@@ -108,4 +107,4 @@ A few resources to get you started if this is your first Flutter project:
 For help getting started with Flutter development, view the
 [online documentation](https://docs.flutter.dev/), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
->>>>>>> Starting App Testing
+>>>>>>> Starting App Testing -->
