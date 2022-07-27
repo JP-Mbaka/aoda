@@ -41,10 +41,12 @@ dependencies:
   path_provider: any 
   intl: any 
   url_launcher: any
+  get_it: ^7.2.0
 
   #The following adds support SVG files on the mobile devices
   flutter_svg: ^0.22.0
   flutter_auth: ^0.0.1
+
 
 dev_dependencies:
   flutter_test:

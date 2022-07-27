@@ -4,8 +4,9 @@ class BigText extends StatelessWidget {
   late String? text;
   late Color? color;
   late double fontSize;
+  late TextOverflow? d;
 
-  BigText({this.text, this.color = Colors.black, this.fontSize = 34});
+  BigText({this.text, this.color = Colors.black, this.fontSize = 34, this.d});
 
   @override
   Widget build(BuildContext context) {
@@ -15,6 +16,7 @@ class BigText extends StatelessWidget {
         color: color,
         fontSize: fontSize,
         fontWeight: FontWeight.w600,
+        overflow: d,
       ),
     );
   }

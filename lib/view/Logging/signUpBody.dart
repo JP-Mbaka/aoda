@@ -1,8 +1,5 @@
-import 'package:aoda/view/Logging/logging.dart';
-import 'package:aoda/view/Logging/loggingForm.dart';
 import 'package:aoda/view/Logging/signUpForm.dart';
 import 'package:aoda/view/components/bigText.dart';
-import 'package:aoda/view/components/smallText.dart';
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
 
@@ -25,27 +22,7 @@ class SignUpBody extends StatelessWidget {
           children: [
             BigText(text: 'Sign Up', color: color),
             SizedBox(height: size.height * 0.05),
-            SignUpForm(),
-            SizedBox(height: size.height * 0.05),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 30),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  const Text('Already have an Account?'),
-                  GestureDetector(
-                    onTap: () {
-                      Navigator.push(context,
-                          MaterialPageRoute(builder: (context) => Logging()));
-                    },
-                    child: SmallText(
-                      text: 'Sign in',
-                      color: color,
-                    ),
-                  )
-                ],
-              ),
-            )
+            SignUpForm()
           ],
         )),
       ),

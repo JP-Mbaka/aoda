@@ -1,7 +1,10 @@
+import 'package:aoda/services/appServices.dart';
 import 'package:aoda/view/Logging/logging.dart';
-import 'package:aoda/view/dashboard/dashboard.dart';
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
+
+import '../../model/auth.dart';
+import '../components/smallText.dart';
 
 class SignUpForm extends StatefulWidget {
   @override
@@ -10,6 +13,9 @@ class SignUpForm extends StatefulWidget {
 
 class _SignUpFormState extends State<SignUpForm> {
   final _formKey = GlobalKey<FormState>();
+  final TextEditingController _accountNumber = TextEditingController();
+  final TextEditingController _password = TextEditingController();
+  final TextEditingController _passwordConfirm = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -29,6 +35,8 @@ class _SignUpFormState extends State<SignUpForm> {
               padding: const EdgeInsets.symmetric(horizontal: 20),
               margin: const EdgeInsets.only(bottom: 5),
               child: TextFormField(
+                controller: _accountNumber,
+                keyboardType: TextInputType.number,
                 maxLength: 11,
                 maxLines: 1,
                 decoration: const InputDecoration(
@@ -42,6 +50,7 @@ class _SignUpFormState extends State<SignUpForm> {
               padding: const EdgeInsets.symmetric(horizontal: 20),
               margin: const EdgeInsets.only(bottom: 20),
               child: TextFormField(
+                controller: _password,
                 maxLines: 1,
                 obscureText: true,
                 decoration: const InputDecoration(
@@ -54,6 +63,7 @@ class _SignUpFormState extends State<SignUpForm> {
               alignment: Alignment.center,
               padding: const EdgeInsets.symmetric(horizontal: 20),
               child: TextFormField(
+                controller: _passwordConfirm,
                 maxLines: 1,
                 obscureText: true,
                 decoration: const InputDecoration(
@@ -66,9 +76,26 @@ class _SignUpFormState extends State<SignUpForm> {
             SizedBox(
               width: size.width * 0.9,
               child: ElevatedButton(
-                onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => Logging()));
+                onPressed: () async {
+                  if (_password.text == _passwordConfirm.text) {
+                    final user = Auth(
+                        phoneNumber: _accountNumber.text,
+                        password: _password.text);
+                    print("working from signup form${user.phoneNumber}");
+
+                    print("working from signup form${user.password}");
+                    final result = await Service().createUser(user);
+                    String varid;
+
+                    result.error ?? false
+                        ? varid =
+                            "working from signup form ${result.errorMessage}"
+                        : varid = "Created successfully";
+                    print(varid);
+
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => Logging()));
+                  }
                 },
                 style: ButtonStyle(
                     padding:
@@ -77,6 +104,26 @@ class _SignUpFormState extends State<SignUpForm> {
                 child: const Text('Create Account'),
               ),
             ),
+            SizedBox(height: size.height * 0.05),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 30),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  const Text('Already have an Account?'),
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) => Logging()));
+                    },
+                    child: SmallText(
+                      text: 'Sign in',
+                      color: color,
+                    ),
+                  )
+                ],
+              ),
+            )
           ],
         ),
       ),
