@@ -1,4 +1,37 @@
 <!-- <<<<<<< HEAD -->
+# INFOR
+
+NAME: Mbaka JohnPaul Chidera
+MAIL: mbakajohnpaul@gmail.com
+
+# APP INFOR
+
+The Mobile App is built with Flutter, Node.js and Heroku are used to execute the REST API.
+The name of the APP is Aoda, Aoda has 6 views;
+        - Sign In view
+        - Sign Up view
+        - Dashboard View
+        - Transfer View
+        - Transaction History View
+        - Account View
+The Sign-in and Sign-Up view used phone number and password for authentication using the below rest API with HTTP GET request
+https://aoda-rest-api.herokuapp.com/auth
+
+Transaction History uses phone number, amount, narration, date ... for list all transactions taken place using the below API with HTTP GET request;
+https://aoda-rest-api.herokuapp.com/account
+
+Transfer transaction can be executed with the the below rest API with POST HTTP Request
+
+https://aoda-rest-api.herokuapp.com/account
+
+The OverAll Documentation for the REST API via HTTP Request
+https://aoda-rest-api.herokuapp.com/
+
+The Bottom Navgation is use for navigating through the Mobile app from Dashboard View, transfer View, History view, and account view which was not implemented.
+
+
+
+
 # Aoda
 
 A simple mobile banking application for withdrawing/Sending transactions over REST API
