@@ -4,6 +4,11 @@
 NAME: Mbaka JohnPaul Chidera
 MAIL: mbakajohnpaul@gmail.com
 
+# APK LOCATION
+Find the app-debug.apk file in the below location:
+
+Aoda/build/app/outputs/flutter-apk/app-debug.apk.
+
 # APP INFOR
 
 The Mobile App is built with Flutter, Node.js and Heroku are used to execute the REST API.
