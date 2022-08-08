@@ -22,6 +22,11 @@ The name of the APP is Aoda, Aoda has 6 views;
 The Sign-in and Sign-Up view used phone number and password for authentication using the below rest API with HTTP GET request
 https://aoda-rest-api.herokuapp.com/auth
 
+# Access
+
+Use Account Number : "09133950084"
+          PASSWORD : "pass"
+
 Transaction History uses phone number, amount, narration, date ... for list all transactions taken place using the below API with HTTP GET request;
 https://aoda-rest-api.herokuapp.com/account
 
