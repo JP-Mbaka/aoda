@@ -1,9 +1,6 @@
 <!-- <<<<<<< HEAD -->
 # INFOR
 
-NAME: Mbaka JohnPaul Chidera
-MAIL: mbakajohnpaul@gmail.com
-
 # APK LOCATION
 Find the app-debug.apk file in the below location:
 
